@@ -7,3 +7,6 @@
 4. 예약을 취소할 수 있다.
 5. 예약이 생성,변경,취소되면 카카오톡이 전송된다
 6. 암장 문제가 바뀔경우 고객들에게 카카오톡을 전송한다.
+
+## 이벤트 스토밍
+![image](https://github.com/Woongstar/ClimbReservation_AWS_KAFKA_MSA/assets/69667560/9654c4ed-7210-486f-bc62-0619ceeff2f2)
