@@ -20,4 +20,4 @@ public class CenterController {
     @Autowired
     CenterRepository centerRepository;
 }
-//>>> Clean Arch / Inbound Adaptor
+//>>> Clean Arch / Inbound Adaptokur

@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: "Ingress"
+metadata: 
+  name: "climbing-ingress"
+  annotations: 
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingressclass.kubernetes.io/is-default-class: "true"
+spec: 
+  ingressClassName: nginx
+  rules: 
+    - host: ""
+      http: 
+        paths: 
+          - path: /centers
+            pathType: Prefix
+            backend: 
+              service:
+                name: center
+                port:
+                  number: 8080
+          - path: /message
+            pathType: Prefix
+            backend: 
+              service:
+                name: message
+                port:
+                  number: 8080
+          - path: /reservation
+            pathType: Prefix
+            backend: 
+              service:
+                name: product
+                port:
+                  number: 8080
+          - path: /payment
+            pathType: Prefix
+            backend: 
+              service:
+                name: payment
+                port:
+                  number: 8080
+          - path: /kafka
+            pathType: Prefix
+            backend: 
+              service:
+                name: my-kafka
+                port:
+                  number: 9092
