@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
+import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 @Entity
 @Table(name = "Message_table")
@@ -32,23 +34,16 @@ public class Message {
     public static void alertMessage(CenterModified centerModified) {
         //implement business logic here:
 
-        /** Example 1:  new item 
         Message message = new Message();
-        repository().save(message);
-
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(centerModified.get???()).ifPresent(message->{
-            
-            message // do something
-            repository().save(message);
+        message.setId(1L);
+        message.setContent(centerModified.getCenterName() + "의 정보가 변경되었습니다. 고객님께서는 확인 부탁드립니다.");
+        message.setUserPhoneNum("01096326336");
 
-
-         });
-        */
-
+        if(repository().findById(1L).isPresent()){
+            message.setContent("메세지 전송에 실패하였습니다. 이미 보낸 메세지입니다.. 예약을 취소합니다.");
+        }
+        repository().save(message);
     }
 
     //>>> Clean Arch / Port Method

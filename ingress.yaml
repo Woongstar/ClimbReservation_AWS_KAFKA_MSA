@@ -18,31 +18,24 @@ spec:
                 name: center
                 port:
                   number: 8080
-          - path: /message
+          - path: /messages
             pathType: Prefix
             backend: 
               service:
                 name: message
                 port:
                   number: 8080
-          - path: /reservation
+          - path: /reservations
             pathType: Prefix
             backend: 
               service:
-                name: product
+                name: reservation
                 port:
                   number: 8080
-          - path: /payment
+          - path: /payments
             pathType: Prefix
             backend: 
               service:
                 name: payment
                 port:
                   number: 8080
-          - path: /kafka
-            pathType: Prefix
-            backend: 
-              service:
-                name: my-kafka
-                port:
-                  number: 9092
